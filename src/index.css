@@ -85,7 +85,6 @@
     --color-green-700: oklch(.527 .154 150.069);
     --color-emerald-50: oklch(.979 .021 166.113);
     --color-emerald-100: oklch(.95 .052 163.051);
-    --color-emerald-400: oklch(.765 .177 163.223);
     --color-emerald-500: oklch(.696 .17 162.48);
     --color-blue-50: oklch(.97 .014 254.604);
     --color-blue-100: oklch(.932 .032 255.585);
@@ -1324,11 +1323,6 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .from-green-400 {
-    --tw-gradient-from: var(--color-green-400);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-
   .from-green-500 {
     --tw-gradient-from: var(--color-green-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1366,11 +1360,6 @@
 
   .to-emerald-100 {
     --tw-gradient-to: var(--color-emerald-100);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-
-  .to-emerald-400 {
-    --tw-gradient-to: var(--color-emerald-400);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
@@ -1775,13 +1764,13 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
-  .shadow-green-500\/30 {
-    --tw-shadow-color: color-mix(in srgb, oklch(.723 .219 149.579) 30%, transparent);
+  .shadow-green-500\/10 {
+    --tw-shadow-color: color-mix(in srgb, oklch(.723 .219 149.579) 10%, transparent);
   }
 
   @supports (color: color-mix(in lab, red, red)) {
-    .shadow-green-500\/30 {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-green-500) 30%, transparent) var(--tw-shadow-alpha), transparent);
+    .shadow-green-500\/10 {
+      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-green-500) 10%, transparent) var(--tw-shadow-alpha), transparent);
     }
   }
 

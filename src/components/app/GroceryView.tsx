@@ -720,8 +720,11 @@ export function GroceryView({ searchQuery }: GroceryViewProps) {
   const [activeTab, setActiveTab] = useState<
     "essentials" | "items"
   >("essentials");
-  const [activeCategory, setActiveCategory] = useState<string>("");
-  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const [activeCategory, setActiveCategory] =
+    useState<string>("");
+  const sectionRefs = useRef<
+    Record<string, HTMLDivElement | null>
+  >({});
 
   const updateQuantity = (id: number, delta: number) => {
     setQuantities((prev) => ({
@@ -734,8 +737,11 @@ export function GroceryView({ searchQuery }: GroceryViewProps) {
     const element = sectionRefs.current[category];
     if (element) {
       const yOffset = -120; // Offset for fixed header and tabs
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      const y =
+        element.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
       setActiveCategory(category);
     }
   };
@@ -857,11 +863,12 @@ export function GroceryView({ searchQuery }: GroceryViewProps) {
                 <button
                   key={subcategory}
                   className={`
-                    relative overflow-hidden whitespace-nowrap px-5 py-2.5 rounded-full
+                    relative overflow whitespace-nowrap px-5 py-2.5 rounded-full
                     transition-all duration-300 ease-out
-                    ${activeCategory === subcategory 
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/30 scale-105' 
-                      : 'bg-white text-gray-700 border border-gray-200 hover:border-green-400 hover:shadow-md hover:scale-105'
+                    ${
+                      activeCategory === subcategory
+                        ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/10 scale-105"
+                        : "bg-white text-gray-700 border border-gray-200 hover:border-green-400 hover:shadow-md hover:scale-105"
                     }
                   `}
                   onClick={() => scrollToCategory(subcategory)}
@@ -870,7 +877,7 @@ export function GroceryView({ searchQuery }: GroceryViewProps) {
                     {subcategory}
                   </span>
                   {activeCategory === subcategory && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 animate-pulse opacity-50" />
+                    <div className="absolute inset-0 animate-pulse opacity-50" />
                   )}
                 </button>
               ))}
@@ -881,7 +888,7 @@ export function GroceryView({ searchQuery }: GroceryViewProps) {
         {/* Category Sections */}
         <div className="space-y-8">
           {subcategories.map((subcategory) => (
-            <div 
+            <div
               key={subcategory}
               ref={(el) => {
                 sectionRefs.current[subcategory] = el;
